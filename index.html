@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./info-cmp/index.css">
+    <link rel="stylesheet" href="./index.css">
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="btn btn--prev">&lt;</div>
+      <div class="btn btn--next">&gt;</div>
+      <div class="video-reco video-reco--0">
+        <div class="info-box">
+          <a 
+              href="${info.url}" 
+              class="video-href"
+              target="_blank"
+          >
+              <div class="mask"></div>
+              <img 
+                  src="${info.poster}"
+                  alt="${info.title}" 
+                  class="poster"
+              />
+              <div class="info">
+                  <p class="title">${info.title}</p>
+                  <p class="up">up ${info.up}</p>
+                  <p class="play">${info.play}播放</p>
+              </div>
+          </a>
+        </div>
+        <div class="watch">
+          <div class="mess">稍后再看</div>
+        </div>
+      </div>
+    </div>
+		
+		<script src="./data/data-info.js"></script>
+		<script src="./info-cmp/index.js"></script>
+
+		<script>
+			info.init({
+				el: document.getElementById('app'),
+				infoList: infoList
+			})
+		</script>
+  </body>
+</html>
